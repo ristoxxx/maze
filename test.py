@@ -1,4 +1,10 @@
 from pyamaze import maze,agent,COLOR
+from sys import argv
+
+#list_of_args = argv
+
+#filename = (list_of_args[1])
+filename = "maze1.csv"
 
 def RCW():
     global direction
@@ -57,19 +63,22 @@ def wallFollower(m):
 
 if __name__=='__main__':
     myMaze=maze()
-    myMaze.CreateMaze(loadMaze="maze1.csv")
+    myMaze.CreateMaze(loadMaze=filename)
 
     # a=agent(myMaze,shape='arrow',footprints=True)
-    b=agent(myMaze,shape='arrow',color=COLOR.yellow)
+    b=agent(myMaze,shape='arrow',color=COLOR.yellow,footprints=True)
     path,path2=wallFollower(myMaze)
     # myMaze.tracePath({a:path})
     myMaze.tracePath({b:path2})
+    
     if len(path)>20:
             print("20 steps is not enouhg")
     if len(path)>150:
             print("150 steps is not enouhg")
     if len(path)>200:
             print("200 steps is not enouhg")
-    print("Final steps count:",len(path))
-    print(path)
+            
+    print("Final steps count: ",len(path))
+    print("Final route: ",path)
+    
     myMaze.run()
