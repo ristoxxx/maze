@@ -1,4 +1,4 @@
 # maze
 mazesolver
 
-Siple mazesolver to test algorithms
+Simple mazesolver to test algorithms
