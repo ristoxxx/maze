@@ -4,7 +4,7 @@ from sys import argv
 #list_of_args = argv
 
 #filename = (list_of_args[1])
-filename = "maze1.csv"
+filename = "maze4.csv"
 
 def RCW():
     global direction
@@ -63,8 +63,8 @@ def wallFollower(m):
 
 if __name__=='__main__':
     myMaze=maze()
-    myMaze.CreateMaze(loadMaze=filename)
-
+    #myMaze.CreateMaze(2,8,loadMaze=filename)
+    myMaze.CreateMaze(2,8)
     # a=agent(myMaze,shape='arrow',footprints=True)
     b=agent(myMaze,shape='arrow',color=COLOR.yellow,footprints=True)
     path,path2=wallFollower(myMaze)

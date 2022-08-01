@@ -13,10 +13,11 @@ for x in f:
     for y in x:
         b = b+1
         if y=="#":
-            y = ",0,0,0,0"
+            y = 0,0,0,0
         else:
-            y = ",1,1,1,1"
+            y = 1,1,1,1
         uusi=(a,b,y)
         print(uusi)
+    
 print(uusi)
 f.close()
