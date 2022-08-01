@@ -31,7 +31,7 @@ for x in f:
         
     #uusi = uusi + "\n"
 maze = uusi    
-print(maze[13][37])
+#print(maze[13][37])
 print(ulos)
 f.close()
 # maze = [
@@ -58,5 +58,5 @@ f.close()
 #         ['w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w',
 #          'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'c', 'w']
 #     ]
-# print(maze)
+print(maze)
 
