@@ -1,5 +1,6 @@
 from colorama import Fore
 
+startpoint = []
 
 def get_starting_finishing_points():
     #_start = [i for i in range(len(maze[0])) if maze[0][i] == 'c']
@@ -82,10 +83,10 @@ if __name__ == '__main__':
     #      'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'c', 'w', 'w'],
     # ]
     f = open("maze22.txt", "r")
-    #print(f.readline())
-    #print(f.readline())
     a=0
     uusi=[[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]]
+    ulos=[]
+    sisaan = []
     for x in f:
         a = a+1
         b=0
@@ -97,16 +98,36 @@ if __name__ == '__main__':
                 
             elif y == "\n":
                 y =  "\n"
+            
+            elif y == "E":
+                y =  "c"
+                ulos.append(a-1)
+                ulos.append(b-1)
+                uusi[a-1].append(y)
                 
+            elif y == "^":
+                y =  "c"
+                sisaan.append(a-1)
+                sisaan.append(b-1)
+                uusi[a-1].append(y)
+            
             else:
                 y = "c"
                 uusi[a-1].append(y)
-            #uusi = uusi + "\n"
+                
+            
+        #uusi = uusi + "\n"
     maze = uusi    
-    #print(maze)
+    print(maze[13][37])
+    print(ulos)
     f.close()
+    
+    
 
-    start, finish = get_starting_finishing_points()
+
+    #start, finish = get_starting_finishing_points()
+    start = sisaan
+    finish = ulos
     maze[start[0]][start[1]] = 'p'
 
     rat_path = [start]

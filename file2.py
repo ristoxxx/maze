@@ -3,11 +3,9 @@ from xml.etree.ElementTree import tostring
 
 
 f = open("maze22.txt", "r")
-#print(f.readline())
-#print(f.readline())
 a=0
 uusi=[[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]]
-e="a"
+ulos=[]
 for x in f:
     a = a+1
     b=0
@@ -19,7 +17,13 @@ for x in f:
             
         elif y == "\n":
             y =  "\n"
-            
+        
+        elif y == "E":
+            y =  "c"
+            ulos.append(a)
+            ulos.append(b)
+            uusi[a-1].append(y)
+        
         else:
             y = "c"
             uusi[a-1].append(y)
@@ -28,6 +32,7 @@ for x in f:
     #uusi = uusi + "\n"
 maze = uusi    
 print(maze[13][37])
+print(ulos)
 f.close()
 # maze = [
 #         ['w', 'c', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w',
